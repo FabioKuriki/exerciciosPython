@@ -137,33 +137,112 @@ class Exercicios: # Classe começa em maiusculo, metodo não
     def exercicio13(self):
         self.num1 = 1
         self.num2 = 1
-        termoAuxiliar = 0
+        self.termoAuxiliar = 0
         self.numTexto = "1, 1, "
 
         for i in range(3, 11, 1):
-            termoAuxiliar = self.num1 + self.num2
+            self.termoAuxiliar = self.num1 + self.num2
             self.num1 = self.num2
-            self.num2 = termoAuxiliar
+            self.num2 = self.termoAuxiliar
             self.numTexto += f"{self.num2}, "
 
         return self.numTexto
 
     # Exercício 14: Faça um programa que peça ao usuário um número e imprima se é um número de Fibonacci.
-    def exercicio14():
-        num = int(input("Informe um número: "))
-        termoAnterior = 1
-        termoNovo = 1
-        termoAuxiliar = 0
+    def exercicio14(self):
+        self.num2 = 1
+        self.num3 = 1
+        self.termoAuxiliar = 0
 
-        while (num < 1):
-            num = int(input("Informe um número maior que 1\n\nInforme um número: "))
+        while (self.num1 > self.num2):
+            self.termoAuxiliar = self.num2 + self.num3
+            self.num2 = self.num3
+            self.num3 = self.termoAuxiliar
 
-        while (num > termoAnterior):
-            termoAuxiliar = termoAnterior + termoNovo
-            termoAnterior = termoNovo
-            termoNovo = termoAuxiliar
-
-            if (num == termoAnterior):
+            if (self.num1 == self.num2):
                 return "É um número Fibonacci"
 
         return "Não é um número Fibonacci"
+
+    # Exercício 15: Faça um programa que peça ao usuário um número e calcule a soma dos seus digitos.
+    def exercicio15(self):
+        self.num2 = 0
+
+        for i in self.numTexto:
+            self.num2 += int(i)
+
+        return self.num2
+
+    # Exercício 16: Faça um programa que peça ao usuário um número e imprima os números pares e
+    #               ímpares de 1 até esse número.
+    def exercicio16(self):
+        self.tabPar = ""
+        self.tabImpar = ""
+
+
+        for i in range(1, self.num1 + 1, 1):
+            if (i % 2 == 0):
+                self.tabPar += f"{i}, "
+            else:
+                self.tabImpar += f"{i}, "
+
+        return f"Número pares:\n{self.tabPar}\n\nNúmeros ímpares:\n{self.tabImpar}"
+
+    # Exercício 17: Faça um programa que peça ao usuário um número e imprima os números primos de
+    #               1 até esse número.
+    def exercicio17(self):
+        self.numTexto = ""
+
+        for i in range(2, self.num1 + 1, 1):
+            if (self.num1 < 2):
+                return "Informe um número maior que 1"
+            elif (i == 2 or i == 3 or i == 5 or i == 7):
+                self.numTexto += f"{i}, "
+            elif (i % 2 != 0 and i % 3 != 0 and i % 5 != 0 and i % 7 != 0):
+                self.numTexto += f"{i}, "
+            else:
+                continue
+        return self.numTexto
+
+    # Exercício 18: Faça um programa que peça ao usuário um número e imprima a sequência de Collatz
+    #               desse número.
+    def exercicio18(self):
+        self.collatz = f"{self.num1}"
+
+        while (self.num1 != 1):
+            if (self.num1 % 2 == 0):
+                self.num1 = self.num1 // 2
+                self.collatz += f", {self.num1}"
+            else:
+                self.num1 = (self.num1 * 3) + 1
+                self.collatz += f", {self.num1}"
+
+        return self.collatz
+
+    # Exercício 19: Faça um programa que peça ao usuário um número e imprima a soma dos números
+    #               pares e ímpares de 1 até esse número.
+    def exercicio19(self):
+        self.somaPar = 0
+        self.somaImpar = 0
+
+        for i in range(1, self.num1 + 1, 1):
+            if (i % 2 == 0):
+                self.somaPar += i
+            else:
+                self.somaImpar += i
+
+        return f"Soma dos números pares:\n{self.somaPar}\nSoma dos número ímpares:\n{self.somaImpar}"
+
+    # Exercício 20: Faça um programa que peça ao usuário um número e imprima se é um número perfeito
+    #               (a soma de seus divisores, excluindo ele mesmo, é igual ao próprio número).
+    def exercicio20(self):
+        self.divisores = 0
+
+        for i in range(1, self.num1, 1):
+            if (self.num1 % i == 0):
+                self.divisores += i
+
+        if (self.divisores == self.num1):
+            return "Número Perfeito"
+        else:
+            return "Não é número perfeito"

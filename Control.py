@@ -16,6 +16,13 @@ class Control:
         while (self.exer.num1 < 1):
             self.exer.num1 = int(input("Informe um número maior ou igual a 1\n\nInforme um número: "))
 
+    def coletarTexto(self):
+        self.exer.num1 = int(input("Informe um número: "))
+        while (self.exer.num1 < 1):
+            self.exer.num1 = int(input("Informe um número maior ou igual a 1\n\nInforme um número: "))
+
+        self.exer.numTexto = str(self.exer.num1)
+
     def menu(self):
         self.opcao2 = int(input("-------- Menu ---------\n\n" +
                            "\n0. Voltar" +
@@ -43,6 +50,11 @@ class Control:
                                "\n13. Exercício 13" +
                                "\n14. Exercício 14" +
                                "\n15. Exercício 15" +
+                               "\n16. Exercício 16" +
+                               "\n17. Exercício 17" +
+                               "\n18. Exercício 18" +
+                               "\n19. Exercício 19" +
+                               "\n20. Exercício 20" +
                                "\nEscolha uma das opções acima: "))
 
     def menuSelecionar(self):
@@ -123,5 +135,26 @@ class Control:
                 print(self.exer.exercicio12())
             elif(self.opcao3 == 13):
                 print(self.exer.exercicio13())
+            elif(self.opcao3 == 14):
+                self.coletar1num()
+                print(self.exer.exercicio14())
+            elif(self.opcao3 == 15):
+                self.coletarTexto()
+                print(self.exer.exercicio15())
+            elif(self.opcao3 == 16):
+                self.coletar1num()
+                print(self.exer.exercicio16())
+            elif(self.opcao3 == 17):
+                self.coletar1num()
+                print(self.exer.exercicio17())
+            elif(self.opcao3 == 18):
+                self.coletar1num()
+                print(self.exer.exercicio18())
+            elif(self.opcao3 == 19):
+                self.coletar1num()
+                print(self.exer.exercicio19())
+            elif(self.opcao3 == 20):
+                self.coletar1num()
+                print(self.exer.exercicio20())
             else:
                 print("Selecione uma opção válida!")
